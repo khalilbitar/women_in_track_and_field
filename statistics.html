@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Women in Track & Field</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Women in Track & Field</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="statistics.html">Statistics</a>
+        <a href="insights.html">Insights</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <section id="statistics">
+        <h2>Statistics on Women in Track & Field</h2>
+        <h3>Collecting Data</h3>
+        <p>I wanted to have a statiscal perspective on the subject of women in Track & Field. So, the first step was to collect data.</p>
+        <ul>
+            <li>AUB: I created a survey titled 'Women in Track & Field at AUB Survey' and sent it to AUB Track & Field women athletes.</li>
+            <li>Lebanon: I researched the current state of Lebanese women in Track & Field mainly using the book "TOKYO 2020NE LEBANESE ATHLETICS' EVOLUTION 2016-2019" written by my coach, Gaby Issa-El-Khoury, Ph.D., OLY.</li>
+        </ul>
+        <h3>AUB</h3>
+        <ul><li>The survey is very well diversed as the respondents come from different backgrounds and experiences.</li></ul>
+        <section id="verticalBarChart">
+            <canvas id="myBarChart" width="400" height="400"></canvas>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var ctx = document.getElementById('myBarChart').getContext('2d');
+                    var myBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['less than a year', '2 Years', '3 Years', '5 Years', '6 Years'], // Replace with your actual data labels
+                            datasets: [{
+                                label: 'Percentage of Athletes',
+                                data: [27.3, 36.4, 9.1, 9.1, 18.1], // Replace with your actual data values
+                                backgroundColor: ['#8e44ad', '#2c3e50', '#008080', '#e74c3c', '#ffd700'], // Bar colors
+                                borderWidth: 1, // Border width of bars
+                            }]
+                        },
+                        options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 50, // Set a maximum value for the y-axis (adjust as needed)
+                            }
+
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: "Athletes' distribution according to age",
+                                color: '#333', // You can adjust the color
+                                font: {
+                                    size: 16, // You can adjust the font size
+                                },
+                                padding: {
+                                    top: 10,
+                                    bottom: 10,
+                                },
+                        },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return context.dataset.label + ': ' + context.parsed.y + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    });
+                });
+            </script>
+        </section>
+
+        <section id="horizontalBarChart">
+            <canvas id="myHorizontalBarChart" width="400" height="400"></canvas>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var ctx = document.getElementById('myHorizontalBarChart').getContext('2d');
+                    var myHorizontalBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Sprinting', 'Middle-distance running', 'Long-distance running', 'Hurdles', 'Long Jump'],
+                            datasets: [{
+                                label: 'Percentage of Athletes',
+                                data: [46.2, 15.3, 23.1, 7.7, 7.7],
+                                backgroundColor: ['#3498db', '#2c3e50', '#8e44ad', '#008080', '#e74c3c'],
+                                borderWidth: 1,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                beginAtZero: true,
+                                max: 50, // Set a maximum value for the y-axis (adjust as needed)
+                            }
+                            },
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: "Athletes' distribution according to events",
+                                    color: '#333', // You can adjust the color
+                                    font: {
+                                        size: 16, // You can adjust the font size
+                                    },
+                                    padding: {
+                                        top: 10,
+                                        bottom: 10,
+                                    },
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            return context.dataset.label + ': ' + context.parsed.y + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+        </section>
+        <ul><li>The above charts show that the statistics are diverse enough.</li></ul>
+        <section>
+            <canvas id="supportAUB" width="400" height="400"></canvas>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var ctx = document.getElementById('supportAUB').getContext('2d');
+                    var myHorizontalBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['1', '2', '3', '4', '5'],
+                            datasets: [{
+                                label: 'Percentage of Athletes',
+                                data: [0, 18.1, 9.1, 27.3, 45.5],
+                                backgroundColor: ['#3498db', '#2c3e50', '#8e44ad', '#008080', '#3498db'],
+                                borderWidth: 1,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                beginAtZero: true,
+                                max: 50, // Set a maximum value for the y-axis (adjust as needed)
+                            }
+                            },
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: "Support provided to women in Track & Field at AUB(1: Not supportive at all --> 5: Very supportive)",
+                                    color: '#333', // You can adjust the color
+                                    font: {
+                                        size: 16, // You can adjust the font size
+                                    },
+                                    padding: {
+                                        top: 10,
+                                        bottom: 10,
+                                    },
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            return context.dataset.label + ': ' + context.parsed.y + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+            <b>Average support level to women at AUB: 4.002</b>
+        </section>
+        <h3>Lebanon</h3>
+        <section>
+            <canvas id="supportLeb" width="400" height="400"></canvas>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var ctx = document.getElementById('supportLeb').getContext('2d');
+                    var myHorizontalBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['1', '2', '3', '4', '5'],
+                            datasets: [{
+                                label: 'Percentage of Athletes',
+                                data: [0, 18.2, 36.4, 45.4, 0],
+                                backgroundColor: ['#3498db', '#2c3e50', '#8e44ad', '#008080', '#3498db'],
+                                borderWidth: 1,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                beginAtZero: true,
+                                max: 50, // Set a maximum value for the y-axis (adjust as needed)
+                            }
+                            },
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: "Support provided to women in Track & Field in Lebanon(1: Not supportive at all --> 5: Very supportive)",
+                                    color: '#333', // You can adjust the color
+                                    font: {
+                                        size: 16, // You can adjust the font size
+                                    },
+                                    padding: {
+                                        top: 10,
+                                        bottom: 10,
+                                    },
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            return context.dataset.label + ': ' + context.parsed.y + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+            <b>Average support level to women in Lebanon: 3.272</b>
+        </section>
+        <h4>What is the Lebanese situation in Women's Track & Field?</h4>
+        <h4 class="Leb-subsections">Lebanon's very special female athlete:</h4>
+        <p>Aziza Sbaity, also known as the 'Fastest Woman in Lebanese History' as she is the Lebanese record holder for the women's 100m event, was recently listed among BBC's 100 most influential and inspirational women of 2023: <a href="https://www.bbc.com/news/resources/idt-02d9060e-15dc-426c-bfe0-86a6437e5234">BBC 100 Women 2023: Who's on the list?</a>
+            Aziza is very vocal on the topics of racism in the country, champion inclusivity and equality as she herself was confronted with racism and color-based classism. She also aspires to inspire Lebanon's youth by collaborating with schools and universities.
+        </p>
+        <h4 class="Leb-subsections">Statistiscal method to evaluate women's Track & Field in Lebanon:</h4>
+        <p>
+            The National Athletics Performance Level Estimation, NAPLES for short, is a statiscal method for evaluating a nation's level in all Track & Field event. NAPLES was developed by Dr. Issa-El-Khoury and Dr. Chafic
+            Mokbel. We can use this method to evaluate women's Track & Field. Aziza Sbaity took the NAPLES values up with her 100m records(Issa-El-Khoury, Gaby).
+        </p>
+        <h4 class="Leb-subsections">AUB's female athletes dominating the sport:</h4>
+        <p>   
+            Meet the exceptional Lebanese female Track & Field athletes at AUB who have not only dominated the field but also exemplify the core values of NAPLES: Maissa Mouawad, the 2023 Lebanese champion in both the 100m and High Jump events, stands out as a remarkable athlete who embodies dedication and excellence. Leen Ghezzaoui, holding the national record for the under 18 400mH event, showcases incredible talent and determination. Haya Kobrosli, an Arab U18 bronze medalist and relay West Asian gold medalist, is a testament to the strength and skill cultivated within AUB's athletic community. These outstanding athletes deserve the unwavering support of the AUB Sports and Athletics Center, recognizing and fostering their achievements to inspire generations to come. Let's unite in championing these extraordinary women and elevating the profile of women in Track & Field at AUB.
+        </p>
+        <h4 class="Leb-subsections">Important statistics:</h4>
+        <ul>
+            <li><b>81.8 % think that support provided to women at AUB is higher than or as high as the support provided to women in Lebanon.</b></li>
+            <li><b>18.2 % of the respondents have faced gender-specific challenges in pursuing Track & Field at AUB or in Lebanon(e.g., lack of resources, stereotypes, etc.)</b></li>
+        </ul>
+        <p></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Khalil Bitar | Lebanese Women in Track & Field</p>
+    </footer>    
+</body>
+</html>
